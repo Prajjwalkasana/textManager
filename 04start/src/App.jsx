@@ -2,12 +2,6 @@ import { useState } from "react"
 import Navbar from "./components/Navbar"
 import Form from "./components/form"
 import Alert from "./components/Alert"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom'
 
 function App() {
 
@@ -34,6 +28,7 @@ function App() {
       setchangeLabel("light")
       setchangeBody("#01071c")
       showAlert("Light Mode Enable","Successfully")
+      console.log(document.body.classList)
     }
     else{
       setMode("light")

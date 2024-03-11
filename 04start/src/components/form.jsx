@@ -22,8 +22,6 @@ export default function Form(props) {
   }
 
 
-
-
   function upperCase(){
     setText(text.toUpperCase())
     props.aler("Change to upper case","Success")
@@ -43,15 +41,15 @@ export default function Form(props) {
 
             </textarea>
             <br/>
-            <button className="btn btn-primary " onClick={upperCase} >For Uppercase</button>
-            <button className="btn btn-primary mx-2" onClick={lowerCase}>For Lowercase</button>
-            <button className="btn btn-primary my-2" onClick={clearText} >Clear text</button>
+            <button disabled={text.length===0}  className="btn btn-primary " onClick={upperCase} >For Uppercase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={lowerCase}>For Lowercase</button>
+            <button disabled={text.length===0} className="btn btn-primary my-2" onClick={clearText} >Clear text</button>
             </div>
             <div className="container">
             <h3>
                 Your Text Summary
             </h3>
-            There are {(text.split(" ").length)-1} words and {text.length} alphabets
+            There are {text.split(" ").filter((word)=>{return word.length!=0}).length} words and {text.length} alphabets
             </div>
             
     </div>
